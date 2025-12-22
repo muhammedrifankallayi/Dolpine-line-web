@@ -1,0 +1,91 @@
+<section class="expertise-section">
+    <!-- Animated Ocean Background -->
+    <div class="ocean-bg">
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="particles">
+            @for (i of [1,2,3,4,5,6,7,8,9,10,11,12]; track i) {
+            <div class="particle" [style.--delay]="i * 0.5 + 's'" [style.--x]="(i * 8) + '%'"></div>
+            }
+        </div>
+    </div>
+
+    <!-- Glowing Orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header-section">
+            <div class="header-badge">
+                <span class="badge-icon">⚓</span>
+                <span class="badge-text">What We Do Best</span>
+            </div>
+            <h2 class="main-title">
+                <span class="title-line">OUR</span>
+                <span class="title-gradient">EXPERTISE</span>
+            </h2>
+            <p class="subtitle">
+                Comprehensive logistics solutions engineered for precision, speed, and reliability across the globe.
+            </p>
+            <div class="title-decoration">
+                <div class="deco-line"></div>
+                <div class="deco-dot"></div>
+                <div class="deco-line"></div>
+            </div>
+        </div>
+
+        <!-- Services Hexagonal Grid -->
+        <div class="services-universe">
+            <!-- Central Hub -->
+            <div class="central-hub">
+                <div class="hub-inner">
+                    <div class="hub-icon">🚢</div>
+                    <span class="hub-text">DOLPHIN</span>
+                    <span class="hub-subtext">LINE</span>
+                </div>
+                <div class="hub-ring ring-1"></div>
+                <div class="hub-ring ring-2"></div>
+                <div class="hub-ring ring-3"></div>
+            </div>
+
+            <!-- Service Nodes on Orbital Paths -->
+            <div class="orbital-container">
+                @for (service of services; track service.title; let i = $index) {
+                <div class="service-node" [class]="'node-' + (i + 1)" [style.--index]="i"
+                    [style.--total]="services.length" (mouseenter)="selectedService = service"
+                    (mouseleave)="selectedService = null">
+
+                    <div class="node-connector"></div>
+
+                    <div class="node-content">
+                        <div class="node-icon">
+                            <span class="icon-inner">{{ service.icon }}</span>
+                        </div>
+                        <div class="node-info">
+                            <h3 class="node-title">{{ service.title }}</h3>
+                            <div class="node-line"></div>
+                        </div>
+                    </div>
+
+                    <!-- Expanded Details on Hover -->
+                    <div class="node-expanded">
+                        <div class="expanded-content">
+                            <div class="expanded-icon">{{ service.icon }}</div>
+                            <h4 class="expanded-title">{{ service.title }}</h4>
+                            <p class="expanded-desc">{{ service.description }}</p>
+                            <div class="expanded-features">
+                                @for (feature of service.features; track feature) {
+                                <span class="feature-tag">{{ feature }}</span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

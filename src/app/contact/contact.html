@@ -1,0 +1,154 @@
+<section class="contact-section">
+    <!-- Background Elements -->
+    <div class="contact-bg">
+        <div class="bg-gradient"></div>
+        <div class="floating-elements">
+            <div class="float-el el-1"></div>
+            <div class="float-el el-2"></div>
+            <div class="float-el el-3"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <div class="header-badge">
+                <span class="badge-icon">📬</span>
+                <span class="badge-text">Get In Touch</span>
+            </div>
+            <h2 class="section-title">
+                <span class="title-small">Let's Connect</span>
+                <span class="title-main">CONTACT <span class="title-highlight">US</span></span>
+            </h2>
+            <p class="section-subtitle">
+                Ready to streamline your logistics? Reach out to our team for personalized solutions.
+            </p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="contact-content">
+            <!-- Contact Form -->
+            <div class="form-container">
+                <div class="form-card">
+                    <div class="form-header">
+                        <h3 class="form-title">Send us a Message</h3>
+                        <p class="form-desc">Fill out the form below and we'll get back to you shortly.</p>
+                    </div>
+
+                    <form class="contact-form" (ngSubmit)="onSubmit()">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Full Name</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">👤</span>
+                                    <input type="text" class="form-input" placeholder="John Doe"
+                                        [(ngModel)]="formData.name" name="name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Email Address</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">✉️</span>
+                                    <input type="email" class="form-input" placeholder="john@example.com"
+                                        [(ngModel)]="formData.email" name="email" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">📞</span>
+                                    <input type="tel" class="form-input" placeholder="+971 XX XXX XXXX"
+                                        [(ngModel)]="formData.phone" name="phone">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Subject</label>
+                                <div class="input-wrapper">
+                                    <span class="input-icon">📋</span>
+                                    <select class="form-input form-select" [(ngModel)]="formData.subject"
+                                        name="subject">
+                                        <option value="">Select a subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="quote">Request a Quote</option>
+                                        <option value="support">Customer Support</option>
+                                        <option value="partnership">Partnership</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label class="form-label">Your Message</label>
+                            <div class="input-wrapper textarea-wrapper">
+                                <span class="input-icon">💬</span>
+                                <textarea class="form-input form-textarea" rows="5"
+                                    placeholder="Tell us about your logistics needs..." [(ngModel)]="formData.message"
+                                    name="message" required></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-icon">🚀</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map & Contact Info -->
+            <div class="info-container">
+                <!-- Map -->
+                <div class="map-card">
+                    <div class="map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14429.94371814114!2d55.364459!3d25.287873!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c66a0b1662b%3A0x6d3dcadaa24a354b!2sMai%20Tower!5e0!3m2!1sen!2sus!4v1766428325422!5m2!1sen!2sus"
+                            width="100%" height="280" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    <div class="map-overlay">
+                        <span class="map-badge">📍 Mai Tower, Dubai</span>
+                    </div>
+                </div>
+
+                <!-- Contact Info Cards -->
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-icon">📍</div>
+                        <div class="info-details">
+                            <h4 class="info-title">Our Location</h4>
+                            <p class="info-text">Mai Tower, Al Nahda 1<br>Dubai, United Arab Emirates</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">📞</div>
+                        <div class="info-details">
+                            <h4 class="info-title">Phone</h4>
+                            <p class="info-text">+971 4 XXX XXXX<br>+971 50 XXX XXXX</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">✉️</div>
+                        <div class="info-details">
+                            <h4 class="info-title">Email</h4>
+                            <p class="info-text">info&#64;dolphinline.ae<br>sales&#64;dolphinline.ae</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">🕐</div>
+                        <div class="info-details">
+                            <h4 class="info-title">Working Hours</h4>
+                            <p class="info-text">Sun - Thu: 9:00 AM - 6:00 PM<br>Fri - Sat: Closed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,100 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+interface Service {
+  title: string;
+  description: string;
+  icon: string;
+  features: string[];
+}
+
+@Component({
+  selector: 'app-services',
+  imports: [CommonModule],
+  templateUrl: './services.html',
+  styleUrl: './services.scss',
+})
+export class Services {
+  selectedService: Service | null = null;
+
+  services: Service[] = [
+    {
+      title: 'NVOCC',
+      description: 'Non-Vessel Operating Common Carrier services ensuring flexible and reliable scheduling for your cargo needs.',
+      icon: '📦',
+      features: ['Flexible Scheduling', 'Global Routes', 'Competitive Rates']
+    },
+    {
+      title: 'Shipping Line Agency',
+      description: 'Representing leading shipping lines to provide seamless connections to ports worldwide.',
+      icon: '⚓',
+      features: ['Port Operations', 'Vessel Handling', 'Documentation']
+    },
+    {
+      title: 'International Freight',
+      description: 'Comprehensive sea, air, and land freight solutions tailored to your specific requirements.',
+      icon: '🌍',
+      features: ['Sea Freight', 'Air Freight', 'Land Transport']
+    },
+    {
+      title: 'Multi Modal Transport',
+      description: 'Integrated transport solutions combining rail, road, and sea for optimal efficiency.',
+      icon: '🚛',
+      features: ['Rail', 'Road', 'Sea Integration']
+    },
+    {
+      title: 'LCL Consolidation',
+      description: 'Cost-effective Less than Container Load solutions for smaller shipments.',
+      icon: '📋',
+      features: ['Cost Effective', 'Flexible Volume', 'Regular Departures']
+    },
+    {
+      title: 'Third Party Logistics',
+      description: 'End-to-end supply chain management and logistics outsourcing services.',
+      icon: '🔗',
+      features: ['Supply Chain', 'Inventory', 'Distribution']
+    },
+    {
+      title: 'Warehousing',
+      description: 'Secure storage and efficient distribution networks aimed at speed and safety.',
+      icon: '🏭',
+      features: ['Secure Storage', 'Inventory Mgmt', 'Distribution']
+    },
+    {
+      title: 'Chartering',
+      description: 'Customized chartering services for bulk, break-bulk, and oversized cargo.',
+      icon: '✈️',
+      features: ['Air Charter', 'Sea Charter', 'Custom Solutions']
+    },
+    {
+      title: 'Break-bulk & RO-RO',
+      description: 'Specialized handling for heavy lift, project cargo, and vehicle transport.',
+      icon: '🚗',
+      features: ['Heavy Lift', 'Vehicle Transport', 'Project Cargo']
+    },
+    {
+      title: 'Project Cargo',
+      description: 'Expert management of complex, heavy, and over-dimensional shipments.',
+      icon: '🏗️',
+      features: ['Heavy Equipment', 'Engineering', 'Special Handling']
+    },
+    {
+      title: 'Customs Clearance',
+      description: 'Hassle-free customs compliance and documentation services for smooth operations.',
+      icon: '📝',
+      features: ['Documentation', 'Compliance', 'Fast Processing']
+    },
+    {
+      title: 'Packing & Removals',
+      description: 'Professional packing and relocation services for businesses and individuals.',
+      icon: '📦',
+      features: ['Safe Packing', 'Relocation', 'Insurance']
+    },
+    {
+      title: 'Trading Consultancy',
+      description: 'Expert advice on international trade regulations and market strategies.',
+      icon: '💼',
+      features: ['Trade Advisory', 'Market Analysis', 'Compliance']
+    }
+  ];
+}
