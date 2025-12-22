@@ -20,7 +20,7 @@
         <!-- Header Section -->
         <div class="header-section">
             <div class="header-badge">
-                <span class="badge-icon">⚓</span>
+                <span class="badge-icon"><img src="logo/dolphineline.png" alt="Dolphin" /></span>
                 <span class="badge-text">What We Do Best</span>
             </div>
             <h2 class="main-title">
@@ -42,7 +42,9 @@
             <!-- Central Hub -->
             <div class="central-hub">
                 <div class="hub-inner">
-                    <div class="hub-icon">🚢</div>
+                    <div class="hub-logo">
+                        <img src="logo/dolphineline.png" alt="Dolphin Line Logo" />
+                    </div>
                     <span class="hub-text">DOLPHIN</span>
                     <span class="hub-subtext">LINE</span>
                 </div>
@@ -62,7 +64,7 @@
 
                     <div class="node-content">
                         <div class="node-icon">
-                            <span class="icon-inner">{{ service.icon }}</span>
+                            <span class="icon-inner material-symbols-outlined">{{ service.icon }}</span>
                         </div>
                         <div class="node-info">
                             <h3 class="node-title">{{ service.title }}</h3>
@@ -73,7 +75,8 @@
                     <!-- Expanded Details on Hover -->
                     <div class="node-expanded">
                         <div class="expanded-content">
-                            <div class="expanded-icon">{{ service.icon }}</div>
+                            <div class="expanded-icon"><span class="material-symbols-outlined">{{ service.icon }}</span>
+                            </div>
                             <h4 class="expanded-title">{{ service.title }}</h4>
                             <p class="expanded-desc">{{ service.description }}</p>
                             <div class="expanded-features">

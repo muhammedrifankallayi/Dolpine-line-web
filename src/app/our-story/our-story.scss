@@ -143,8 +143,16 @@
 }
 
 .accent-icon {
-    font-size: 2rem;
+    width: 40px;
+    height: 40px;
     animation: bounce-icon 3s ease-in-out infinite;
+}
+
+.accent-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.5));
 }
 
 @keyframes bounce-icon {

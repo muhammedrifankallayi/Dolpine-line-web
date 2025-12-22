@@ -295,8 +295,8 @@
 }
 
 .hub-inner {
-    width: 140px;
-    height: 140px;
+    width: 180px;
+    height: 180px;
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.9) 100%);
     border: 2px solid rgba(59, 130, 246, 0.5);
     border-radius: 50%;
@@ -308,6 +308,7 @@
         0 0 60px rgba(59, 130, 246, 0.3),
         inset 0 0 30px rgba(6, 182, 212, 0.1);
     animation: hub-pulse 4s ease-in-out infinite;
+    padding: 15px;
 }
 
 @keyframes hub-pulse {
@@ -326,16 +327,33 @@
     }
 }
 
-.hub-icon {
-    font-size: 2.5rem;
-    margin-bottom: 4px;
+.hub-logo {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 6px;
+}
+
+.hub-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(1.2) drop-shadow(0 0 10px rgba(56, 189, 248, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.hub-inner:hover .hub-logo img {
+    transform: scale(1.1);
 }
 
 .hub-text {
     color: #fff;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
     letter-spacing: 3px;
+    line-height: 1;
 }
 
 .hub-subtext {

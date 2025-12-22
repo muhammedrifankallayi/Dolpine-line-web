@@ -13,7 +13,7 @@
         <!-- Section Header -->
         <div class="section-header">
             <div class="header-badge">
-                <span class="badge-icon">📬</span>
+                <span class="badge-icon material-symbols-outlined">mail</span>
                 <span class="badge-text">Get In Touch</span>
             </div>
             <h2 class="section-title">
@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 <label class="form-label">Full Name</label>
                                 <div class="input-wrapper">
-                                    <span class="input-icon">👤</span>
+                                    <span class="input-icon material-symbols-outlined">person</span>
                                     <input type="text" class="form-input" placeholder="John Doe"
                                         [(ngModel)]="formData.name" name="name" required>
                                 </div>
@@ -48,7 +48,7 @@
                             <div class="form-group">
                                 <label class="form-label">Email Address</label>
                                 <div class="input-wrapper">
-                                    <span class="input-icon">✉️</span>
+                                    <span class="input-icon material-symbols-outlined">email</span>
                                     <input type="email" class="form-input" placeholder="john@example.com"
                                         [(ngModel)]="formData.email" name="email" required>
                                 </div>
@@ -59,7 +59,7 @@
                             <div class="form-group">
                                 <label class="form-label">Phone Number</label>
                                 <div class="input-wrapper">
-                                    <span class="input-icon">📞</span>
+                                    <span class="input-icon material-symbols-outlined">phone</span>
                                     <input type="tel" class="form-input" placeholder="+971 XX XXX XXXX"
                                         [(ngModel)]="formData.phone" name="phone">
                                 </div>
@@ -67,7 +67,7 @@
                             <div class="form-group">
                                 <label class="form-label">Subject</label>
                                 <div class="input-wrapper">
-                                    <span class="input-icon">📋</span>
+                                    <span class="input-icon material-symbols-outlined">topic</span>
                                     <select class="form-input form-select" [(ngModel)]="formData.subject"
                                         name="subject">
                                         <option value="">Select a subject</option>
@@ -83,7 +83,7 @@
                         <div class="form-group full-width">
                             <label class="form-label">Your Message</label>
                             <div class="input-wrapper textarea-wrapper">
-                                <span class="input-icon">💬</span>
+                                <span class="input-icon material-symbols-outlined">chat</span>
                                 <textarea class="form-input form-textarea" rows="5"
                                     placeholder="Tell us about your logistics needs..." [(ngModel)]="formData.message"
                                     name="message" required></textarea>
@@ -92,7 +92,7 @@
 
                         <button type="submit" class="submit-btn">
                             <span class="btn-text">Send Message</span>
-                            <span class="btn-icon">🚀</span>
+                            <span class="btn-icon material-symbols-outlined">send</span>
                         </button>
                     </form>
                 </div>
@@ -110,14 +110,15 @@
                         </iframe>
                     </div>
                     <div class="map-overlay">
-                        <span class="map-badge">📍 Mai Tower, Dubai</span>
+                        <span class="map-badge"><span class="material-symbols-outlined">location_on</span> Mai Tower,
+                            Dubai</span>
                     </div>
                 </div>
 
                 <!-- Contact Info Cards -->
                 <div class="info-cards">
                     <div class="info-card">
-                        <div class="info-icon">📍</div>
+                        <div class="info-icon"><span class="material-symbols-outlined">location_on</span></div>
                         <div class="info-details">
                             <h4 class="info-title">Our Location</h4>
                             <p class="info-text">Mai Tower, Al Nahda 1<br>Dubai, United Arab Emirates</p>
@@ -125,7 +126,7 @@
                     </div>
 
                     <div class="info-card">
-                        <div class="info-icon">📞</div>
+                        <div class="info-icon"><span class="material-symbols-outlined">phone</span></div>
                         <div class="info-details">
                             <h4 class="info-title">Phone</h4>
                             <p class="info-text">+971 4 XXX XXXX<br>+971 50 XXX XXXX</p>
@@ -133,7 +134,7 @@
                     </div>
 
                     <div class="info-card">
-                        <div class="info-icon">✉️</div>
+                        <div class="info-icon"><span class="material-symbols-outlined">email</span></div>
                         <div class="info-details">
                             <h4 class="info-title">Email</h4>
                             <p class="info-text">info&#64;dolphinline.ae<br>sales&#64;dolphinline.ae</p>
@@ -141,7 +142,7 @@
                     </div>
 
                     <div class="info-card">
-                        <div class="info-icon">🕐</div>
+                        <div class="info-icon"><span class="material-symbols-outlined">schedule</span></div>
                         <div class="info-details">
                             <h4 class="info-title">Working Hours</h4>
                             <p class="info-text">Sun - Thu: 9:00 AM - 6:00 PM<br>Fri - Sat: Closed</p>
