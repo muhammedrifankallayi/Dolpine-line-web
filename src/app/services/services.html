@@ -63,6 +63,8 @@
                     <div class="node-connector"></div>
 
                     <div class="node-content">
+                        <div class="node-chip-bg" [style.background-image]="'url(' + service.image + ')'"></div>
+                        <div class="node-chip-overlay"></div>
                         <div class="node-icon">
                             <span class="icon-inner material-symbols-outlined">{{ service.icon }}</span>
                         </div>
@@ -74,6 +76,8 @@
 
                     <!-- Expanded Details on Hover -->
                     <div class="node-expanded">
+                        <div class="node-bg-image" [style.background-image]="'url(' + service.image + ')'"></div>
+                        <div class="node-overlay"></div>
                         <div class="expanded-content">
                             <div class="expanded-icon"><span class="material-symbols-outlined">{{ service.icon }}</span>
                             </div>
