@@ -1,3 +1,15 @@
+<!-- Loading Screen -->
+@if (isLoading) {
+<div class="loading-screen">
+    <div class="loader-content">
+        <img src="logo/dolphineline.png" alt="Loading..." class="loader-logo">
+        <div class="loader-bar">
+            <div class="loader-progress"></div>
+        </div>
+    </div>
+</div>
+}
+
 <header
     class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-4 sm:px-6 py-3 md:px-12 md:py-4 bg-gradient-to-b from-black/70 to-transparent backdrop-blur-sm">
     <a routerLink="/" class="flex items-center gap-2 sm:gap-3 cursor-pointer group">

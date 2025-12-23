@@ -11,6 +11,15 @@ import { CommonModule } from '@angular/common';
 export class App {
   protected readonly title = signal('Dolphin Line');
 
+  isLoading = true;
+
+  constructor() {
+    // Simulate initial loading
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 2000);
+  }
+
   isMobileMenuOpen = false;
 
   toggleMobileMenu(): void {
