@@ -1,0 +1,132 @@
+<section class="tracking-section">
+    <!-- Background -->
+    <div class="tracking-bg">
+        <div class="bg-image"></div>
+        <div class="bg-overlay"></div>
+    </div>
+
+    <!-- Container -->
+    <div class="container">
+
+        <!-- Search Area -->
+        <div class="search-container" [class.compact]="shipmentFound()">
+            <div class="page-header">
+                <span class="header-icon material-symbols-outlined">radar</span>
+                <h1 class="page-title">Track Your <span class="highlight">Shipment</span></h1>
+                <p class="page-subtitle">Real-time status updates for your cargo status worldwide.</p>
+            </div>
+
+            <div class="search-box">
+                <div class="input-wrapper">
+                    <span class="search-icon material-symbols-outlined">search</span>
+                    <input type="text" placeholder="Enter Tracking ID / BL Number" [(ngModel)]="trackingId"
+                        (keyup.enter)="searchShipment()">
+                </div>
+                <button class="search-btn" (click)="searchShipment()" [disabled]="isSearching() || !trackingId()">
+                    @if (isSearching()) {
+                    <span class="loader"></span>
+                    } @else {
+                    <span>Track Cargo</span>
+                    }
+                </button>
+            </div>
+        </div>
+
+        <!-- Tracking Results -->
+        @if (shipmentFound() && shipment) {
+        <div class="results-container">
+
+            <!-- Shipment Overview Card -->
+            <div class="shipment-card">
+                <div class="card-header">
+                    <div class="id-group">
+                        <span class="label">Tracking ID</span>
+                        <span class="value">{{ shipment.id }}</span>
+                    </div>
+                    <div class="status-badge">
+                        <span class="dot"></span>
+                        {{ shipment.currentStatus }}
+                    </div>
+                </div>
+
+                <div class="shipment-route">
+                    <div class="route-point start">
+                        <span class="point-icon material-symbols-outlined">trip_origin</span>
+                        <div class="point-info">
+                            <span class="label">Origin</span>
+                            <span class="city">{{ shipment.from }}</span>
+                        </div>
+                    </div>
+
+                    <div class="route-visual">
+                        <div class="line"></div>
+                        <img src="tracking/delivery-icon.png" class="moving-icon" alt="Moving Truck">
+                    </div>
+
+                    <div class="route-point end">
+                        <span class="point-icon material-symbols-outlined">flag</span>
+                        <div class="point-info">
+                            <span class="label">Destination</span>
+                            <span class="city">{{ shipment.to }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-stats">
+                    <div class="stat-item">
+                        <span class="material-symbols-outlined">weight</span>
+                        <div>
+                            <span class="label">Total Weight</span>
+                            <span class="val">{{ shipment.weight }}</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="material-symbols-outlined">deployed_code</span>
+                        <div>
+                            <span class="label">Pieces</span>
+                            <span class="val">{{ shipment.pieces }}</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <span class="material-symbols-outlined">calendar_clock</span>
+                        <div>
+                            <span class="label">Est. Delivery</span>
+                            <span class="val">{{ shipment.expectedDelivery }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="timeline-container">
+                <h3 class="section-heading">Shipment History</h3>
+                <div class="timeline">
+                    @for (event of timeline; track event.time) {
+                    <div class="timeline-item" [class.completed]="event.completed">
+                        <div class="time-col">
+                            <span class="date">{{ event.date }}</span>
+                            <span class="time">{{ event.time }}</span>
+                        </div>
+
+                        <div class="marker-col">
+                            <div class="line"></div>
+                            <div class="marker">
+                                <span class="material-symbols-outlined">{{ event.icon }}</span>
+                            </div>
+                        </div>
+
+                        <div class="content-col">
+                            <div class="event-card">
+                                <h4 class="event-status">{{ event.status }}</h4>
+                                <p class="event-location">{{ event.location }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+        }
+    </div>
+</section>

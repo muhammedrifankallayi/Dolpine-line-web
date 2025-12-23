@@ -629,51 +629,6 @@
     letter-spacing: 1px;
 }
 
-/* ===== STATS BAR ===== */
-.stats-bar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 41, 59, 0.4) 100%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 100px;
-    padding: 24px 60px;
-    margin-top: 60px;
-    backdrop-filter: blur(20px);
-    flex-wrap: wrap;
-}
-
-.stat-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-}
-
-.stat-number {
-    color: #fff;
-    font-size: 2rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #3b82f6, #06b6d4);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.stat-label {
-    color: rgba(148, 163, 184, 0.8);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.stat-divider {
-    width: 1px;
-    height: 40px;
-    background: linear-gradient(180deg, transparent, rgba(59, 130, 246, 0.5), transparent);
-}
-
 /* ===== RESPONSIVE ===== */
 
 /* Large tablets and small desktops */
