@@ -1,0 +1,19 @@
+/* Mobile Menu Styles */
+.mobile-menu {
+    &.closed {
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-100%);
+    }
+
+    &.open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+}
+
+/* Hide header on client portal page */
+:host-context(app-client-portal) header {
+    display: none;
+}

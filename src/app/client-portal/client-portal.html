@@ -1,0 +1,193 @@
+<div class="portal-page">
+    <!-- Animated Background -->
+    <div class="background">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="ocean-waves">
+            <div class="wave wave-1"></div>
+            <div class="wave wave-2"></div>
+            <div class="wave wave-3"></div>
+        </div>
+        <div class="particles">
+            @for (i of [1,2,3,4,5,6,7,8]; track i) {
+            <div class="particle" [style.--delay]="i * 1.5 + 's'" [style.--x]="(i * 12) + '%'"></div>
+            }
+        </div>
+    </div>
+
+    <!-- Portal Header -->
+    <header class="portal-nav">
+        <a routerLink="/" class="nav-logo">
+            <img src="logo/dolphineline.png" alt="Dolphin Line" />
+            <span class="logo-text">Dolphin Line</span>
+        </a>
+        <a routerLink="/" class="back-btn">
+            <span class="material-symbols-outlined">arrow_back</span>
+            <span class="btn-text">Back to Home</span>
+        </a>
+    </header>
+
+    <!-- Main Container -->
+    <div class="portal-container">
+        <!-- Header Section -->
+        <div class="portal-header">
+            <div class="logo-wrapper">
+                <img src="logo/dolphineline.png" alt="Dolphin Line" class="logo" />
+                <div class="logo-glow"></div>
+            </div>
+            <h1 class="portal-title">LOCAL <span>CHARGES</span></h1>
+            <p class="portal-subtitle">Import & Export Container Charges - AEJEA Port</p>
+        </div>
+
+        <!-- Tab Navigation -->
+        <div class="tab-navigation">
+            <button class="tab-btn" [class.active]="activeTab === 'import'" (click)="activeTab = 'import'">
+                <span class="material-symbols-outlined">download</span>
+                Import Charges
+            </button>
+            <button class="tab-btn" [class.active]="activeTab === 'export'" (click)="activeTab = 'export'">
+                <span class="material-symbols-outlined">upload</span>
+                Export Charges
+            </button>
+        </div>
+
+        <!-- Import Charges Table -->
+        @if (activeTab === 'import') {
+        <div class="charges-section" id="import-charges">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="section-icon material-symbols-outlined">inventory_2</span>
+                    <h2 class="section-title">Import Local Charges</h2>
+                </div>
+                <button class="download-btn" (click)="downloadPDF('import')">
+                    <span class="material-symbols-outlined">download</span>
+                    Download PDF
+                </button>
+            </div>
+            <div class="table-wrapper">
+                <table class="charges-table">
+                    <thead>
+                        <tr>
+                            <th>POD</th>
+                            <th>EXP/IMP</th>
+                            <th>CHARGES</th>
+                            <th>UNIT/TYPE</th>
+                            <th>CURRENCY</th>
+                            <th>20'DC GEN</th>
+                            <th>40'HC GEN</th>
+                            <th>45'HC GEN</th>
+                            <th>20'DC HAZ</th>
+                            <th>40'HC HAZ</th>
+                            <th>45'HC HAZ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (charge of importCharges; track charge.name) {
+                        <tr>
+                            <td class="port-cell">{{ charge.pod }}</td>
+                            <td class="type-cell">
+                                <span class="type-badge import">IMPORT</span>
+                            </td>
+                            <td class="charge-name">{{ charge.name }}</td>
+                            <td class="unit-cell">{{ charge.unitType }}</td>
+                            <td class="currency-cell">{{ charge.currency }}</td>
+                            <td class="price-cell">{{ charge.dc20Gen }}</td>
+                            <td class="price-cell">{{ charge.hc40Gen }}</td>
+                            <td class="price-cell">{{ charge.hc45Gen }}</td>
+                            <td class="price-cell haz">{{ charge.dc20Haz }}</td>
+                            <td class="price-cell haz">{{ charge.hc40Haz }}</td>
+                            <td class="price-cell haz">{{ charge.hc45Haz }}</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        }
+
+        <!-- Export Charges Table -->
+        @if (activeTab === 'export') {
+        <div class="charges-section" id="export-charges">
+            <div class="section-header">
+                <div class="section-header-left">
+                    <span class="section-icon material-symbols-outlined">local_shipping</span>
+                    <h2 class="section-title">Export Local Charges</h2>
+                </div>
+                <button class="download-btn" (click)="downloadPDF('export')">
+                    <span class="material-symbols-outlined">download</span>
+                    Download PDF
+                </button>
+            </div>
+            <div class="table-wrapper">
+                <table class="charges-table">
+                    <thead>
+                        <tr>
+                            <th>POL</th>
+                            <th>EXP/IMP</th>
+                            <th>CHARGES</th>
+                            <th>UNIT/TYPE</th>
+                            <th>CURRENCY</th>
+                            <th>20'DC GEN</th>
+                            <th>40'HC GEN</th>
+                            <th>45'HC GEN</th>
+                            <th>20'DC HAZ</th>
+                            <th>40'HC HAZ</th>
+                            <th>45'HC HAZ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (charge of exportCharges; track charge.name) {
+                        <tr>
+                            <td class="port-cell">{{ charge.pol }}</td>
+                            <td class="type-cell">
+                                <span class="type-badge export">EXPORT</span>
+                            </td>
+                            <td class="charge-name">{{ charge.name }}</td>
+                            <td class="unit-cell">{{ charge.unitType }}</td>
+                            <td class="currency-cell">{{ charge.currency }}</td>
+                            <td class="price-cell">{{ charge.dc20Gen }}</td>
+                            <td class="price-cell">{{ charge.hc40Gen }}</td>
+                            <td class="price-cell">{{ charge.hc45Gen }}</td>
+                            <td class="price-cell haz">{{ charge.dc20Haz }}</td>
+                            <td class="price-cell haz">{{ charge.hc40Haz }}</td>
+                            <td class="price-cell haz">{{ charge.hc45Haz }}</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        }
+
+        <!-- Info Cards -->
+        <div class="info-cards">
+            <div class="info-card">
+                <span class="info-icon material-symbols-outlined">info</span>
+                <div class="info-content">
+                    <h4>General Containers</h4>
+                    <p>Standard container rates for non-hazardous cargo shipments.</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <span class="info-icon material-symbols-outlined filled">warning</span>
+                <div class="info-content">
+                    <h4>Hazardous Containers</h4>
+                    <p>Special rates apply for hazardous material shipments (HAZ).</p>
+                </div>
+            </div>
+            <div class="info-card">
+                <span class="info-icon material-symbols-outlined">support_agent</span>
+                <div class="info-content">
+                    <h4>Need Assistance?</h4>
+                    <p>Contact our support team for custom quotes and inquiries.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Text -->
+        <p class="footer-text">
+            © 2024 Dolphin Line. All rights reserved. | Rates subject to change without notice.
+        </p>
+    </div>
+</div>
