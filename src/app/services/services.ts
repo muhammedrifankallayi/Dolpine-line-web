@@ -20,6 +20,41 @@ export class Services {
 
   services: Service[] = [
     {
+      title: 'Freight Forwarding',
+      description: 'Comprehensive air, sea, and land freight services with end-to-end coordination and timely execution for seamless cargo movement.',
+      icon: 'public',
+      features: ['Air Freight', 'Sea Freight', 'Land Transport'],
+      image: 'service/international-freight.jpg'
+    },
+    {
+      title: 'Warehousing & Storage',
+      description: 'Secure and flexible storage solutions aligned with UAE free zone logistics standards, providing safe custody and efficient inventory management.',
+      icon: 'warehouse',
+      features: ['Secure Storage', 'Inventory Mgmt', 'Distribution'],
+      image: 'service/warehousing.png'
+    },
+    {
+      title: 'Reverse Logistics',
+      description: 'Comprehensive support for returned goods, including inspection, repacking, restocking, and redistribution to optimize your supply chain.',
+      icon: 'recycling',
+      features: ['Returns Management', 'Repacking', 'Restocking'],
+      image: 'service/warehousing.png'
+    },
+    {
+      title: 'Transportation & Distribution',
+      description: 'Reliable transportation solutions for local and regional cargo movement with efficient last-mile delivery capabilities.',
+      icon: 'local_shipping',
+      features: ['Local Transport', 'Regional Delivery', 'Last Mile'],
+      image: 'service/multi-modal-transport.png'
+    },
+    {
+      title: 'Customs & Documentation',
+      description: 'Expert customs clearance and comprehensive documentation support ensuring compliance and smooth import/export operations.',
+      icon: 'description',
+      features: ['Customs Clearance', 'Documentation', 'Compliance'],
+      image: 'service/customs-clearance.png'
+    },
+    {
       title: 'NVOCC',
       description: 'Non-Vessel Operating Common Carrier services ensuring flexible and reliable scheduling for your cargo needs.',
       icon: 'package_2',
@@ -34,78 +69,57 @@ export class Services {
       image: 'service/shipping-line-agency.png'
     },
     {
-      title: 'International Freight',
-      description: 'Comprehensive sea, air, and land freight solutions tailored to your specific requirements.',
-      icon: 'public',
-      features: ['Sea Freight', 'Air Freight', 'Land Transport'],
-      image: 'service/international-freight.jpg'
-    },
-    {
       title: 'Multi Modal Transport',
-      description: 'Integrated transport solutions combining rail, road, and sea for optimal efficiency.',
-      icon: 'local_shipping',
+      description: 'Integrated transport solutions combining rail, road, and sea for optimal efficiency and cost-effectiveness.',
+      icon: 'hub',
       features: ['Rail', 'Road', 'Sea Integration'],
       image: 'service/multi-modal-transport.png'
     },
     {
+      title: 'Third Party Logistics',
+      description: 'End-to-end supply chain management and logistics outsourcing services tailored to your business needs.',
+      icon: 'settings',
+      features: ['Supply Chain', 'Inventory', 'Distribution'],
+      image: 'service/third-party-logistics.png'
+    },
+    {
       title: 'LCL Consolidation',
-      description: 'Cost-effective Less than Container Load solutions for smaller shipments.',
+      description: 'Cost-effective Less than Container Load solutions for smaller shipments with regular departures.',
       icon: 'inventory_2',
       features: ['Cost Effective', 'Flexible Volume', 'Regular Departures'],
       image: 'service/lcl-consolidation.jpg'
     },
     {
-      title: 'Third Party Logistics',
-      description: 'End-to-end supply chain management and logistics outsourcing services.',
-      icon: 'hub',
-      features: ['Supply Chain', 'Inventory', 'Distribution'],
-      image: 'service/third-party-logistics.png'
-    },
-    {
-      title: 'Warehousing',
-      description: 'Secure storage and efficient distribution networks aimed at speed and safety.',
-      icon: 'warehouse',
-      features: ['Secure Storage', 'Inventory Mgmt', 'Distribution'],
-      image: 'service/warehousing.png'
-    },
-    {
       title: 'Chartering',
-      description: 'Customized chartering services for bulk, break-bulk, and oversized cargo.',
+      description: 'Customized chartering services for bulk, break-bulk, and oversized cargo requirements.',
       icon: 'flight',
       features: ['Air Charter', 'Sea Charter', 'Custom Solutions'],
       image: 'service/chartering.png'
     },
     {
       title: 'Break-bulk & RO-RO',
-      description: 'Specialized handling for heavy lift, project cargo, and vehicle transport.',
+      description: 'Specialized handling for heavy lift, project cargo, and vehicle transport with expert care.',
       icon: 'directions_car',
       features: ['Heavy Lift', 'Vehicle Transport', 'Project Cargo'],
       image: 'service/break-bulk-roro.png'
     },
     {
       title: 'Project Cargo',
-      description: 'Expert management of complex, heavy, and over-dimensional shipments.',
+      description: 'Expert management of complex, heavy, and over-dimensional shipments for specialized projects.',
       icon: 'construction',
       features: ['Heavy Equipment', 'Engineering', 'Special Handling'],
       image: 'service/project-cargo.png'
     },
     {
-      title: 'Customs Clearance',
-      description: 'Hassle-free customs compliance and documentation services for smooth operations.',
-      icon: 'description',
-      features: ['Documentation', 'Compliance', 'Fast Processing'],
-      image: 'service/customs-clearance.png'
-    },
-    {
       title: 'Packing & Removals',
-      description: 'Professional packing and relocation services for businesses and individuals.',
+      description: 'Professional packing and relocation services for businesses and individuals with full insurance coverage.',
       icon: 'move_to_inbox',
       features: ['Safe Packing', 'Relocation', 'Insurance'],
       image: 'service/packing-removal.jpg'
     },
     {
       title: 'Trading Consultancy',
-      description: 'Expert advice on international trade regulations and market strategies.',
+      description: 'Expert advice on international trade regulations, compliance, and market strategies for business growth.',
       icon: 'business_center',
       features: ['Trade Advisory', 'Market Analysis', 'Compliance'],
       image: 'service/trading-consultancy.png'

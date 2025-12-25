@@ -1,0 +1,72 @@
+<section class="trust-section">
+    <!-- Background -->
+    <div class="trust-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="grid-pattern"></div>
+    </div>
+
+    <div class="container">
+        <!-- Section Header -->
+        <div class="section-header">
+            <div class="header-badge">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                    </path>
+                </svg>
+                <span class="badge-text">Our Commitment</span>
+            </div>
+            <h2 class="section-title">
+                <span class="title-line">WHY CLIENTS</span>
+                <span class="title-gradient">TRUST US</span>
+            </h2>
+            <p class="section-subtitle">
+                Building lasting partnerships through excellence, integrity, and dedication
+            </p>
+        </div>
+
+        <!-- Trust Points Grid -->
+        <div class="trust-grid">
+            @for (point of trustPoints; track point.title; let i = $index) {
+            <div class="trust-card" [style.animation-delay]="(i * 100) + 'ms'">
+                <!-- Card Background Elements -->
+                <div class="card-glow"></div>
+
+                <!-- Icon Container -->
+                <div class="icon-container">
+                    <div class="icon-bg"></div>
+                    <span class="material-symbols-outlined icon">{{ point.icon }}</span>
+                    <div class="icon-ring"></div>
+                </div>
+
+                <!-- Content -->
+                <div class="card-content">
+                    <h3 class="card-title">{{ point.title }}</h3>
+                    <p class="card-description">{{ point.description }}</p>
+                </div>
+
+                <!-- Decorative Line -->
+                <div class="card-line"></div>
+            </div>
+            }
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <div class="cta-content">
+                <h3 class="cta-title">Ready to experience the difference?</h3>
+                <p class="cta-description">
+                    Join hundreds of satisfied clients who trust us with their logistics needs
+                </p>
+            </div>
+            <a href="#contact" class="cta-button">
+                <span>Get in Touch</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6">
+                    </path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>

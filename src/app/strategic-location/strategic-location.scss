@@ -1,0 +1,344 @@
+/* ===== STRATEGIC LOCATION SECTION ===== */
+
+.strategic-location-section {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a1628 0%, #020617 50%, #0c1929 100%);
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+/* ===== BACKGROUND ===== */
+.location-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.map-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2338bdf8' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.3;
+}
+
+.gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 50%,
+            rgba(59, 130, 246, 0.15) 0%,
+            transparent 50%),
+        radial-gradient(circle at 70% 50%,
+            rgba(6, 182, 212, 0.1) 0%,
+            transparent 50%);
+}
+
+/* ===== CONTAINER ===== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 10;
+}
+
+/* ===== SECTION HEADER ===== */
+.section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 50px;
+    padding: 10px 24px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+}
+
+.badge-icon {
+    width: 24px;
+    height: 24px;
+    color: #38bdf8;
+}
+
+.badge-text {
+    color: #38bdf8;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-gradient {
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 50%, #8b5cf6 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-shift 5s ease infinite;
+}
+
+@keyframes gradient-shift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.title-line {
+    color: #fff;
+    letter-spacing: 0.1em;
+}
+
+.section-subtitle {
+    color: rgba(148, 163, 184, 0.9);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* ===== CONTENT GRID ===== */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 80px;
+    align-items: start;
+}
+
+/* ===== LOCATION INFO ===== */
+.location-info {
+    position: relative;
+}
+
+.info-card {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(30, 41, 59, 0.6) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 24px;
+    padding: 40px;
+    backdrop-filter: blur(20px);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(59, 130, 246, 0.1);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+}
+
+.card-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+}
+
+.card-description {
+    color: rgba(148, 163, 184, 0.9);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* ===== ADVANTAGES GRID ===== */
+.advantages-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.advantage-card {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.advantage-card:hover {
+    background: rgba(15, 23, 42, 0.6);
+    border-color: rgba(59, 130, 246, 0.4);
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+}
+
+.advantage-icon {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #38bdf8;
+}
+
+.advantage-content {
+    flex: 1;
+}
+
+.advantage-title {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.advantage-desc {
+    color: rgba(148, 163, 184, 0.9);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===== STATS BAR ===== */
+.stats-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    padding: 40px;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.6) 0%, rgba(30, 41, 59, 0.4) 100%);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.stat-number {
+    color: #38bdf8;
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.stat-label {
+    color: rgba(148, 163, 184, 0.9);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(180deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .stats-bar {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .strategic-location-section {
+        padding: 60px 0;
+    }
+
+    .section-header {
+        margin-bottom: 50px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .content-grid {
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .info-card {
+        padding: 30px;
+    }
+
+    .card-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .card-title {
+        font-size: 1.4rem;
+    }
+
+    .advantage-card {
+        padding: 20px;
+        gap: 16px;
+    }
+
+    .advantage-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .advantage-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .stats-bar {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 20px;
+    }
+
+    .stat-divider {
+        width: 60px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), transparent);
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+}
